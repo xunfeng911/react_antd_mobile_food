@@ -5,6 +5,9 @@ import {Provider} from 'react-redux';
 import store from './redux/index.jsx';
 import registerServiceWorker from './registerServiceWorker';
 
+import 'normalize.css';
+import './public/css/common.scss';
+import './public/css/iconfont.css';
 
 const app = document.getElementById('root');
 

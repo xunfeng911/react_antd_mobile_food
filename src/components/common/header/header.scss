@@ -1,0 +1,32 @@
+@import  '../../../public/css/pubilc.scss';
+
+.header{
+  position: fixed;
+  height: 100px;
+  line-height: 3rem;
+  width: 100%;
+  color: #fff;
+  background: $backColor;
+  text-align: center;
+  &-back {
+    float: left;
+    margin-right: .5rem;
+    font-size: 1.5rem;
+    &-hidden {
+      // display: none;
+      color: transparent;
+    }
+  }
+  &-user {
+    float: right;
+    margin-right: .5rem;
+    font-size: 1.5rem;
+    &-hidden {
+      // display: none;
+      color: transparent;
+    }
+  }
+  &-title {
+    font-size: 1.2rem;
+  }
+}

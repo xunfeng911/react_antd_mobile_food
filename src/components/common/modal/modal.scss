@@ -1,0 +1,42 @@
+@import '../../../public/css/pubilc.scss';
+
+.pc_modal {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0 ,0,.4);
+}
+.pc_modal_show {
+  display: none;
+}
+
+.pc_modal_cont {
+  border: 1px solid $btnColor;
+  border-radius: 5px;
+  width: 50%;
+  min-width: 160px;
+  background: $bgWhite;
+  &-text {
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: .9rem;
+  }
+  &-btn {
+    display: flex;
+    border-top: 1px solid $btnColor;
+    button {
+      border: 0;
+      width: calc(50% - 1px);
+      height: 2rem;
+      background: transparent;
+      &:nth-child(1) {
+        border-right: 1px solid $btnColor;
+      }
+    }
+  }
+}

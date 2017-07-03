@@ -1,0 +1,18 @@
+@import '../../public/css/pubilc.scss';
+
+.home{
+  background: $bgWhite;
+  &-btn {
+    margin-left: 17%;
+    margin-top: 1.5rem;
+    width: 66%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.2rem;
+  }
+  &-date {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+}

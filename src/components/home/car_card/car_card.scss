@@ -1,0 +1,93 @@
+@import '../../../public/css/pubilc.scss';
+
+.car-card {
+  padding: 0 5px;
+  width: 100%;
+  height: auto;
+  font-size: .9rem;
+  background: $bgWhite;
+  overflow: hidden;
+  &-li {
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+    padding: 10px 14px;
+    >div {
+      height: 2rem;
+      line-height: 2rem;
+    }
+  }
+}
+.car-card-li-date, .car-card-li-place {
+  display: flex;
+  justify-content: space-between;
+  &-date,&-time,&-begin,&-end {
+    display: inline-block;
+  }
+  >div {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.car-card-li-num {
+  &-data {
+    float: right;
+  }
+  &-join {
+    color: $btnColor;
+  }
+  &-join,&-end {
+    margin-right: .4rem;
+    font-size: 1rem;
+  }
+}
+
+.car-card-li-remark {
+  color: $qianColor;
+}
+
+.car-card-li-issue {
+  height: 1.2rem !important;
+  line-height: 1.2rem !important;
+  // text-align: right;
+  font-size: .5rem;
+}
+
+.car-card-li-button {
+  text-align: right;
+  margin-top: -1.2rem;
+  z-index: 9999;
+  &-end, &-bm, &-cancel {
+    width: 4rem;
+    height: 2.4rem;
+  }
+  &-end {
+    background: $borderColor !important;
+  }
+  &-cancel {
+    border: 1px solid $btnColor !important;
+    margin-left: 1.5rem;
+    color: $textColor !important;
+    background: $bgWhite !important;
+  }
+}
+
+.card-shadow {
+  z-index: 888;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, .7);
+  // -moz-box-shadow: 999px 999px 999px #999 inset;               /* For Firefox3.6+ */
+	// -webkit-box-shadow:999px 999px 999px #999 inset;            /* For Chrome5+, Safari5+ */
+	// box-shadow: 999px 999px 999px #999 inset;                    /* For Latest Opera */
+}
+.card_shadow {
+  filter:brightness(.5);
+}
+.join_btn {
+  position: absolute;
+  right: 3%;
+  margin-top: -2.2rem;
+}

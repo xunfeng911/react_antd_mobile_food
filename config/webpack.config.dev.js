@@ -146,6 +146,8 @@ module.exports = {
           /\.jpe?g$/,
           /\.png$/,
           /\.less$/,
+          /\.svg$/,
+          /\.scss$/,
         ],
         loader: require.resolve('file-loader'),
         options: {
@@ -183,6 +185,26 @@ module.exports = {
           // path.resolve(__dirname, 'src/my-project-svg-foler'),  // folder of svg files in your project
         ]
       },
+      {
+            test: /\.scss$/,
+            use: [{
+                loader: "style-loader"
+            }, {
+                loader: "css-loader"
+              }, {
+                loader: "postcss-loader",
+                options: {
+              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+              plugins: () => [
+                autoprefixer({
+                  browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
+                }),
+              ],
+            },
+              },{
+                loader: "sass-loader",
+            }]
+        },
       {
         test: /\.less$/,
         use: [

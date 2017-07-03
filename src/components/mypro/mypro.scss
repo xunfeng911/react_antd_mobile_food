@@ -1,0 +1,26 @@
+@import '../../public/css/pubilc.scss';
+
+.mypro_pop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  &-list {
+    width: 100%;
+    border-bottom: 1px solid $borderColor;
+    &:last-child {
+      border-bottom: 0;
+    }
+    > div {
+      margin-left: 10%;
+      width: 80%;
+      span:nth-child(2) {
+        margin-left: .7rem;
+      }
+      span:last-child {
+        margin-left: 2rem;
+        float: right;
+      }
+    }
+  }
+}

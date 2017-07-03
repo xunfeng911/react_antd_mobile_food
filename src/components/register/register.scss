@@ -1,0 +1,46 @@
+@import '../../public/css/pubilc.scss';
+
+.reg {
+  padding-top: 3rem;
+  &-li {
+    margin-bottom: 1rem;
+    border: 1px solid $borderColor;
+    border-right: 0;
+    border-left: 0;
+    background: $bgWhite;
+    text-align: center;
+    &-tel {
+      border: 0;
+      width: 90%;
+      height: 3rem;
+      font-size: .9rem;
+    }
+    &:nth-child(4),&:nth-child(5) {
+      display: flex;
+      justify-content: space-around;
+      padding: .2rem 0;
+    }
+    &-code {
+      border: 1px solid $borderColor;
+      border-radius: 5px;
+      width: 45%;
+      height: 3rem;
+      text-align: center;
+      font-size: .9rem;
+    }
+    &-span {
+      display: inline-block;
+      border-radius: 5px;
+      width: 45%;
+      text-align: center;
+    }
+  }
+  &-btn {
+    margin-top: .5rem;
+    margin-left: 5%;
+    width: 90%;
+    height: 3rem;
+    text-indent: 1rem;
+    letter-spacing: 1rem;
+  }
+}

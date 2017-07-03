@@ -1,0 +1,33 @@
+@import '../../../public/css/pubilc.scss';
+
+.pop_not {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .4);
+  > div {
+    width: 70%;
+    min-width: 200px;
+  }
+  &-cont {
+    border-radius: 5px;
+    border: 1px solid $btnColor;
+    padding: 2rem .5rem;
+    // min-height: 300px;
+    background: $bgWhite;
+  }
+  &-close {
+    margin-top: 1rem;
+    color: $bgWhite;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+.pop_not_show {
+  display: none;
+}

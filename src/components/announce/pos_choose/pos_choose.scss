@@ -1,0 +1,54 @@
+@import '../../../public/css/pubilc.scss';
+
+
+.pos_choose {
+  position: fixed;
+  top: 3rem; left: 0; right: 0;
+  height: 100%;
+  background: $bgColor;
+  &-had {
+    display: flex;
+    flex-wrap: wrap;
+    background: $bgWhite;
+  }
+  &-place {
+    border-bottom: 1px solid $borderColor;
+    width: calc(50% - 1px);
+    height: 3rem;
+    line-height: 3rem;
+    color: $textColor;
+    font-size: 1rem;
+    text-align: center;
+    &:nth-child(odd) {
+      border-right: 1px solid $borderColor;
+    }
+    &:hover, &:active {
+      color: $btnColor !important;
+    }
+    &:visited {
+      color: $textColor;
+    }
+  }
+  &-new {
+    margin-top: 2rem;
+    text-align: center;
+    &-input {
+      border: 1px solid $borderColor;
+      border-radius: 5px;
+      width: 66%;
+      height: 3rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  &-btn {
+    margin-top: 2rem;
+    margin-left: 5%;
+    width: 90%;
+    height: 3rem;
+  }
+}
+
+.pos_choose-show {
+  display: none;
+}

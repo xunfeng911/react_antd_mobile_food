@@ -1,0 +1,68 @@
+@import '../../public/css/pubilc.scss';
+
+.anc {
+  &-list {
+    margin-bottom: .8rem;
+    background: $bgWhite;
+    &-input {
+      display: flex;
+      justify-content: space-around;
+      padding-top: .8rem;
+      button {
+        border: 0;
+        border-bottom: 1px solid $textColor;
+        height: 2rem;
+        width: 36%;
+        color: $textColor;
+        font-size: 1rem;
+        background: transparent;
+      }
+      .anticon {
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.5rem;
+        color: $btnColor;
+      }
+    }
+    &-date {
+      margin-top: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+    &-time {
+      padding-bottom: 1rem;
+      text-align: center;
+    }
+
+    &-bz {
+      border-top: 1px solid $borderColor;
+      text-align: center;
+      input {
+        padding:  0 5%;
+        width: 100%;
+        height: 2.4rem;
+        font-size: .8rem;
+      }
+    }
+    &-num {
+      padding: 1rem 0;
+      text-align: center;
+      color: textColor;
+      input {
+        margin: 0 1rem;
+        border: 1px solid $borderColor;
+        border-radius: 100%;
+        width: 2.4rem;
+        height: 2.4rem;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+  }
+  &-btn {
+    margin-top: 2rem;
+    margin-left: 5%;
+    width: 90%;
+    height: 3rem;
+  }
+}

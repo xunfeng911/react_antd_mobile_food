@@ -4,10 +4,12 @@ import * as action from '../redux/action';
 const Main = (component) => {
   const mapStateToProps = (state) => {
     let {
-      getName
+      testGetTitle,
+      getUserInfo
     } = state
     return {
-      getName
+      testGetTitle,
+      getUserInfo
     }
   }
 

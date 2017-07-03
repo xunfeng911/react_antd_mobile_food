@@ -1,0 +1,30 @@
+
+@font-face {font-family: "pcicon";
+  src: url('../front/iconfont.eot?t=1494337331679'); /* IE9*/
+  src: url('../front/iconfont.eot?t=1494337331679#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../front/iconfont.woff?t=1494337331679') format('woff'), /* chrome, firefox */
+  url('../front/iconfont.ttf?t=1494337331679') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  /*url('../front/iconfont.svg?t=1494337331679#pcicon') format('svg'); */
+  /* iOS 4.1- */
+}
+
+.pcicon {
+  font-family:"pcicon" !important;
+  font-size:1rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: none;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pcicon-QQ:before { content: "\e607"; }
+
+.pcicon-back:before { content: "\e679"; }
+
