@@ -6,9 +6,8 @@ import { Toast } from 'antd-mobile';
 import template from '../index';
 import Header from '../common/header/header';
 import CarCard from './car_card/car_card';
-// import HomeDatePicker from '../common/date_picker/date_picker';
+import HomeDatePicker from '../common/date_picker/date_picker';
 import PcModal from '../common/modal/modal';
-
 import './home.scss';
 import * as axios from '../../public/js/axios.js';
 import { getNewDate, isUserLogined } from '../../public/js/common.js';
@@ -44,6 +43,8 @@ class Home extends Component {
   }
   componentWillMount () {
     const todayDate = getNewDate();
+    this.setState({ date: todayDate });
+    console.log(todayDate)
     this._getHome(todayDate);
   }
   // componentDidMount () {
@@ -80,9 +81,10 @@ class Home extends Component {
     isUserLogined.bind(this)(_goAnc);
   }
   // 修改日期
-  dateChange = (moment, value) => {
-    this.setState({date: value})
-    this._getHome(value)
+  dateChange = (value) => {
+    console.log(value.format('YYYY-MM-DD'))
+    this.setState({date: value.format('YYYY-MM-DD')})
+    this._getHome(value.format('YYYY-MM-DD'))
   }
   _getHome(date) {
     const req = {
@@ -142,6 +144,7 @@ class Home extends Component {
           <div className="home">
             <button className={btnClass} onClick={this.goAnc}>发起拼车</button>
             <div className="home-date">
+              <HomeDatePicker dateChange={this.dateChange} date={this.state.date}/>  
             </div>
             <div className="home-card">
               {this.state.cards.map((card, index) => {

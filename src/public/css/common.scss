@@ -4,7 +4,7 @@
   border-radius: 5px;
   background: $btnColor;
   color: #fff;
-  font-size: .9rem;
+  font-size: 32px;
 }
 body {
   width:100%;
@@ -14,15 +14,15 @@ body {
 
 .index-cont {
   position: relative;
-  top: 3rem;
+  top: 100px;
 }
 
 .strong-span {
   color: #000;
 }
 .code {
-  font-size: 1.5rem;
-  letter-spacing:.5rem;
+  font-size: 48px;
+  letter-spacing: 32px;
 }
 .disable {
   background: $btnDis !important;
@@ -30,3 +30,35 @@ body {
 .red {
   color: $btnColor;
 }
+// @media only screen and (min-width: 319px) {
+//   html,body {
+//     font-size:88% !important;
+//   }
+// }
+// @media only screen and (min-width: 374px) {
+//   html,body {
+//     font-size:94% !important;
+//   }
+// }
+// @media only screen and (min-width: 420px) {
+//   html,body {
+//     font-size:100% !important;
+//   }
+// }
+// @media only screen and (min-width: 481px) {
+//   html,body {
+//     font-size:100% !important;
+//   }
+// }
+
+// @media only screen and (min-width: 561px) {
+//   html,body {
+//     font-size:109% !important;
+//   }
+// }
+
+// @media only screen and (min-width: 641px) {
+//   html,body {
+//     font-size:125% !important;
+//   }
+// }

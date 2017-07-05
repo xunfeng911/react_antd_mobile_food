@@ -12,19 +12,19 @@
   background: rgba(0, 0, 0, .4);
   > div {
     width: 70%;
-    min-width: 200px;
+    min-width: 2rem;
   }
   &-cont {
     border-radius: 5px;
     border: 1px solid $btnColor;
-    padding: 2rem .5rem;
+    padding: 64px 16px;
     // min-height: 300px;
     background: $bgWhite;
   }
   &-close {
-    margin-top: 1rem;
+    margin-top: 32px;
     color: $bgWhite;
-    font-size: 2.5rem;
+    font-size: 80px;
     text-align: center;
   }
 }

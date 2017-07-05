@@ -19,12 +19,12 @@
   border: 1px solid $btnColor;
   border-radius: 5px;
   width: 50%;
-  min-width: 160px;
+  min-width: 1.6rem;
   background: $bgWhite;
   &-text {
     text-align: center;
-    padding: 1.5rem 0;
-    font-size: .9rem;
+    padding: 48px 0;
+    font-size: .32px;
   }
   &-btn {
     display: flex;
@@ -32,7 +32,7 @@
     button {
       border: 0;
       width: calc(50% - 1px);
-      height: 2rem;
+      height: 64px;
       background: transparent;
       &:nth-child(1) {
         border-right: 1px solid $btnColor;

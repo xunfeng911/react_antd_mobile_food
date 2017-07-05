@@ -2,31 +2,37 @@
 
 .header{
   position: fixed;
-  height: 100px;
-  line-height: 3rem;
+  height: 1rem;
+  line-height: 1rem;
   width: 100%;
   color: #fff;
   background: $backColor;
   text-align: center;
   &-back {
+    display: flex;
+    align-items: center;
     float: left;
-    margin-right: .5rem;
-    font-size: 1.5rem;
+    margin-top: calc(.5rem - 36px);
+    margin-right: calc(.5rem - 36px);
+    font-size: 36px;
     &-hidden {
       // display: none;
       color: transparent;
     }
   }
   &-user {
+    display: flex;
+    align-items: center;
     float: right;
-    margin-right: .5rem;
-    font-size: 1.5rem;
+    margin-top: calc(.5rem - 36px); 
+    margin-right: calc(.5rem - 36px);
+    font-size: 36px;
     &-hidden {
       // display: none;
       color: transparent;
     }
   }
   &-title {
-    font-size: 1.2rem;
+    font-size: 36px;
   }
 }

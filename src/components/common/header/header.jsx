@@ -52,11 +52,11 @@ class Header extends Component {
     return (
       <div className={headerClass}>
         <span className={backClass} onClick={this.goToBack}>
-          <Icon type="left" />
+          <Icon type="left"  size="lg" />
         </span>
         <span className="header-title">{this.props.title}</span>
         <span className={UserClass} onClick={this.goToUser}>
-          <Icon type="user" ></Icon>
+          <Icon type="up" size="lg" ></Icon>
         </span>
       </div>
     )

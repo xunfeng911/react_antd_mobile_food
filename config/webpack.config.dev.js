@@ -42,6 +42,10 @@ module.exports = {
     // Note: instead of the default WebpackDevServer client, we use a custom one
     // to bring better experience for Create React App users. You can replace
     // the line below with these two lines if you prefer the stock client:
+    //  热更新
+    'react-hot-loader/patch',
+    `webpack-dev-server/client?http://localhost:${paths.openPort}`,
+    'webpack/hot/only-dev-server',
     // require.resolve('webpack-dev-server/client') + '?/',
     // require.resolve('webpack/hot/dev-server'),
     require.resolve('react-dev-utils/webpackHotDevClient'),
@@ -71,6 +75,21 @@ module.exports = {
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
+  },
+  // 热更新
+  devServer: {
+    host: 'localhost',
+    port: paths.openPort,
+    compress: true,
+    disableHostCheck: true,
+    contentBase: path.resolve(__dirname, './dist'),
+    overlay: { warnings: true, errors: true },
+    publicPath: publicPath,
+    historyApiFallback: true,
+    // respond to 404s with index.html
+
+    hot: true,
+    // enable HMR on the server
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -118,8 +137,7 @@ module.exports = {
         use: [
           {
             options: {
-              formatter: eslintFormatter,
-              
+              formatter: eslintFormatter,             
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -148,6 +166,7 @@ module.exports = {
           /\.less$/,
           /\.svg$/,
           /\.scss$/,
+          /\.sass$/,
         ],
         loader: require.resolve('file-loader'),
         options: {
@@ -170,8 +189,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
         loader: require.resolve('babel-loader'),
+        
         options: {
           plugins: [
+            // 热更新
+            "react-hot-loader/babel",
             ['import', { libraryName: 'antd-mobile', style: true }],
           ],
           cacheDirectory: true,
@@ -186,25 +208,26 @@ module.exports = {
         ]
       },
       {
-            test: /\.scss$/,
-            use: [{
-                loader: "style-loader"
+          test: /\.scss$/,
+          use: [{
+              loader: "style-loader"
+          }, {
+              loader: "css-loader"
             }, {
-                loader: "css-loader"
-              }, {
-                loader: "postcss-loader",
-                options: {
-              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [
-                autoprefixer({
-                  browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
-                }),
-              ],
-            },
-              },{
-                loader: "sass-loader",
-            }]
-        },
+              loader: "postcss-loader",
+              options: {
+            ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+            plugins: () => [
+              autoprefixer({
+                browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
+              }),
+              pxtorem({ rootValue: 100, propWhiteList: [] })
+            ],
+          },
+            },{
+              loader: "sass-loader",
+          }]
+      },
       {
         test: /\.less$/,
         use: [
@@ -262,6 +285,7 @@ module.exports = {
                   ],
                   flexbox: 'no-2009',
                 }),
+                pxtorem({ rootValue: 100, propWhiteList: [] })
               ],
             },
           },
@@ -276,6 +300,9 @@ module.exports = {
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     // In development, this will be an empty string.
+    // 热更新
+    new webpack.HotModuleReplacementPlugin(),
+
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -288,7 +315,6 @@ module.exports = {
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
     new webpack.DefinePlugin(env.stringified),
     // This is necessary to emit hot updates (currently CSS only):
-    new webpack.HotModuleReplacementPlugin(),
     // Watcher doesn't work well if you mistype casing in a path so we use
     // a plugin that prints an error when you attempt to do this.
     // See https://github.com/facebookincubator/create-react-app/issues/240

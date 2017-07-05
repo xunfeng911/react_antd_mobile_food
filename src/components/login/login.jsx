@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {  Toast,Button } from 'antd-mobile';
+import {  Toast } from 'antd-mobile';
 
 import template from '../index';
 import Header from '../common/header/header';
@@ -116,7 +116,6 @@ class Login extends Component {
                 <Link to="/register">注册账号</Link>
               </div>
               <button className="login-btn-in btn" onClick={throttle(this.getLogin, 5000)}>登录</button>
-              <Button  type="primary">primary button</Button>
             </div>
           </div>
         </div>
