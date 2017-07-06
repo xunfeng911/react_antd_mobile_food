@@ -4,8 +4,8 @@ import { Toast, Icon} from 'antd-mobile';
 import template from '../index';
 import Header from '../common/header/header';
 import PosChoose from './pos_choose/pos_choose';
-// import HomeDatePicker from '../common/date_picker/date_picker';
-// import HomeTimePicker from '../common/time_picker/time_picker';
+import HomeDatePicker from '../common/date_picker/date_picker';
+import HomeTimePicker from '../common/time_picker/time_picker';
 
 import './announce.scss';
 import * as axios from '../../public/js/axios.js';
@@ -27,8 +27,8 @@ class Announce extends Component {
       startTimeMaxMin: '',
       startTimeMinHour: '',
       startTimeMinMin: '',
-      startTime: '',
-      endTime: '',
+      startTime: '最早时间',
+      endTime: '最晚时间',
       posType: 'start',
       posIsShow: false
     }
@@ -38,16 +38,21 @@ class Announce extends Component {
     this.setState({ startDate: getNewDate() })
   }
 
-  dateChange = (moment,value) => { this.setState({ startDate: value }) }
+  dateChange = (value) => {
+    console.log(value.format('YYYY-MM-DD'))
+    this.setState({startDate: value.format('YYYY-MM-DD')})
+  }
   bzChange = e => { this.setState({ message: e.target.value })}
-  timeChangeStart = (moment, value) => {
+  timeChangeStart = (msg) => {
+    let value = msg.format('HH:ss')
     let timer = value.split(':');
     setTimeout( () => {
       this.setState({ startTime: value, startTimeMinHour: timer[0], startTimeMinMin: timer[1] })
       window.console.log(this.state.startTime);
     }, 10);
   }
-  timeChangeEnd = (moment, value) => {
+  timeChangeEnd = (msg) => {
+    let value = msg.format('HH:ss')
     let timer = value.split(':');
     setTimeout( () => {
       this.setState({ endTime: value, startTimeMaxHour: timer[0], startTimeMaxMin: timer[1] })
@@ -92,37 +97,37 @@ class Announce extends Component {
     endMs = new Date(endMs).getTime();
     window.console.log(nowDate, startMs, endMs, startDate);
     if (startPos === '选择开始地点' || startPos === '') {
-      Toast.fail('请选择开始地点', 1);
+      Toast.fail('请选择开始地点', 1.5);
       return false;
     }
     if (arrivePos === '选择结束地点' || arrivePos === '') {
-      Toast.fail('请选择结束地点', 1);
+      Toast.fail('请选择结束地点', 1.5);
       return false;
     }
     if (curtMember === 0 || curtMember === '') {
-      Toast.fail('请设置已有人数', 1);
+      Toast.fail('请设置已有人数', 1.5);
       return false;
     }
     if (maxMember === 0 || maxMember === '') {
-      Toast.fail('请设置最大人数', 1);
+      Toast.fail('请设置最大人数', 1.5);
       return false;
     }
     if (curtMember >= maxMember) {
-      Toast.fail('已有人数需小于最大人数', 1);
+      Toast.fail('已有人数需小于最大人数', 1.5);
       return false;
     }
     if (startTime === '' || endTime === '') {
       window.console.log(startTime, endTime)
-      Toast.fail('请设置起始或终止时间', 1);
+      Toast.fail('请设置起始或终止时间', 1.5);
       return false;
     }
     if (startMs > endMs) {
-      Toast.fail('最早时间不能晚于最晚时间哟~', 1);
+      Toast.fail('最早时间不能晚于最晚时间哟~', 1.5);
       return false;
     }
     if (nowDate > startMs - 60 * 60 * 1000) {
       window.console.log(startMs - 60 * 60 * 1000)
-      Toast.fail('拼车开始时间不能晚于当前时间的一小时前', 1);
+      Toast.fail('拼车开始时间不能晚于\n当前时间的一小时前', 2);
       return false;
     }
     this._sendAnc();
@@ -166,10 +171,13 @@ class Announce extends Component {
                 <button onClick={this.posChooseShow.bind(this, 'arrivePos')}>{this.state.arrivePos}</button>
               </div>
               <div className="anc-list-date">
+                <HomeDatePicker dateChange={this.dateChange} date={this.state.startDate}/>  
               </div>
               <div className="anc-list-time">
+                <HomeTimePicker timeChange={this.timeChangeStart} time={this.state.startTime}/>  
               </div>
               <div className="anc-list-time">
+                <HomeTimePicker timeChange={this.timeChangeEnd} time={this.state.endTime}/>   
               </div>
             </div>
             <div className="anc-list">

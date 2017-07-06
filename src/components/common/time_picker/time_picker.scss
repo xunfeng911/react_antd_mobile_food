@@ -1,55 +1,5 @@
 @import '../../../public/css/pubilc.scss';
-
-
-.ant-time-picker-panel, .ant-time-picker-panel-inner {
-  width: 100% !important;
-}
-.ant-time-picker-panel-input-wrap {
-  width: 100%;
-  input {
-    width: 100%;
-    height: 2.2rem;
-    text-align: center;
-    font-size: 1.1rem;
-    color: $btnColor;
-  }
-}
-.ant-time-picker-panel-narrow .ant-time-picker-panel-input-wrap {
-  max-width: 999px !important;
-}
-.ant-time-picker-panel-clear-btn {
-  line-height: 1.1rem;
-  margin-top: .6rem;
-}
-.ant-time-picker-panel-combobox {
-  display: flex;
-  justify-content: space-around;
-}
-.ant-time-picker-panel-select {
-  width: 50%;
-  ul li {
-    text-align: center;
-    font-size: 1.5rem;
-    height: 2rem;
-    line-height: 2rem;
-  }
-}
-.ant-btn-sm {
-  margin-left: 5%;
-  border: 0;
-  height: 2rem;
-  width: 90%;
-  background: $btnColor;
-}
-
-.home_time_picker{
-  width: 50%;
-  .ant-time-picker-input {
-    border: 0;
-    border-bottom: 1px solid $borderColor;
-    width: 100%;
-    height: 2.5rem;
-    text-align: center;
-    color: $btnColor;
-  }
+.anc-list-time{
+  color: $btnColor;
+  font-size: 32px;
 }

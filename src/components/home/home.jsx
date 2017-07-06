@@ -44,7 +44,6 @@ class Home extends Component {
   componentWillMount () {
     const todayDate = getNewDate();
     this.setState({ date: todayDate });
-    console.log(todayDate)
     this._getHome(todayDate);
   }
   // componentDidMount () {

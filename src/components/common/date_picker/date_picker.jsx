@@ -20,35 +20,27 @@ class HomeDatePicker extends Component {
   }
   static defaultProps = {
     date: moment(new Date(), 'YYYY-MM-DD'),
-    dateChange: () => { },
-    DatePickerStyle: {
-      display: 'inline-block',
-      border: '1px solid #bbb',
-      borderRight: 0,
-      borderLeft: 0,
-      width: '88%',
-      textAlign: 'center'
-    }
+    dateChange: () => { }
   }
 
-  range = (start, end) => {
-    const result = [];
-    for (let i = start; i < end; i++) {
-      result.push(i);
-    }
-    return result;
-  }
-  disabledDate = (current) => {
-    let setDate = Date.now() - 1000*60*60*24;
-     return current && current.valueOf() < setDate;
-  }
-  disabledDateTime = () => {
-    return {
-      disabledHours: () => this.range(0, 24).splice(4, 20),
-      disabledMinutes: () => this.range(30, 60),
-      disabledSeconds: () => [55, 56]
-    };
-  }
+  // range = (start, end) => {
+  //   const result = [];
+  //   for (let i = start; i < end; i++) {
+  //     result.push(i);
+  //   }
+  //   return result;
+  // }
+  // disabledDate = (current) => {
+  //   let setDate = Date.now() - 1000*60*60*24;
+  //    return current && current.valueOf() < setDate;
+  // }
+  // disabledDateTime = () => {
+  //   return {
+  //     disabledHours: () => this.range(0, 24).splice(4, 20),
+  //     disabledMinutes: () => this.range(30, 60),
+  //     disabledSeconds: () => [55, 56]
+  //   };
+  // }
   // shouldComponentUpdate (nextProps, nextState) {
   //   // 控制组件是否重新渲染，性能优化
   // }
@@ -68,10 +60,6 @@ class HomeDatePicker extends Component {
   //         onChange={this.props.dateChange} />
   
   render() {
-    // const isFalse = false;
-    // const DatePopupStyle = {
-    //   background: '#000'
-    // }
     return (
       <div className="datepicker">
         <DatePicker
@@ -79,7 +67,8 @@ class HomeDatePicker extends Component {
           title="选择日期"
           extra={this.props.date}
           onChange={this.props.dateChange}
-          minDate={moment(new Date(), 'YYYY-MM-DD')}
+          minDate={moment()}
+          maxDate={moment().add(3,'M')}
         >
         <CustomChildren></CustomChildren>
         </DatePicker> 

@@ -82,10 +82,11 @@ module.exports = {
     port: paths.openPort,
     compress: true,
     disableHostCheck: true,
-    contentBase: path.resolve(__dirname, './dist'),
+    // contentBase: path.resolve(__dirname, './dist'),
     overlay: { warnings: true, errors: true },
     publicPath: publicPath,
     historyApiFallback: true,
+    inline: true,
     // respond to 404s with index.html
 
     hot: true,
