@@ -56,7 +56,7 @@ class Header extends Component {
         </span>
         <span className="header-title">{this.props.title}</span>
         <span className={UserClass} onClick={this.goToUser}>
-          <Icon type="up" size="lg" ></Icon>
+          <Icon type={require('../../../public/img/user.svg')} size="lg" ></Icon>
         </span>
       </div>
     )

@@ -205,9 +205,32 @@ module.exports = {
         loader: 'svg-sprite-loader',
         include: [
           require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. svg files of antd-mobile
-          // path.resolve(__dirname, 'src/my-project-svg-foler'),  // folder of svg files in your project
+          // path.resolve(__dirname, 'src/public/img'),  // folder of svg files in your project
+          paths.appSrc
         ]
       },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      //   loader: 'url-loader',
+      //   query: {
+      //     limit: 10000
+      //   },
+      //   exclude: [
+      //     require.resolve('antd-mobile').replace(/warn\.js$/, ''),
+      //     // path.resolve(__dirname, 'src/public'),  // folder of svg files in your project
+      //   ]
+      // },
+      // {
+      //   test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+      //   loader: 'file-loader',
+      //   query: {
+      //     limit: 10000
+      //   },
+      //   exclude: [
+      //     require.resolve('antd-mobile').replace(/warn\.js$/, ''),
+      //     // path.resolve(__dirname, 'src/public'),  // folder of svg files in your project
+      //   ]
+      // },
       {
           test: /\.scss$/,
           use: [{

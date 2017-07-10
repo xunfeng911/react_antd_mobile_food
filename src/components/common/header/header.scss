@@ -7,7 +7,6 @@
   width: 100%;
   color: #fff;
   background: $backColor;
-  text-align: center;
   &-back {
     display: flex;
     align-items: center;
@@ -16,8 +15,8 @@
     margin-right: calc(.5rem - 36px);
     font-size: 36px;
     &-hidden {
-      // display: none;
-      color: transparent;
+      display: none;
+      // color: transparent;
     }
   }
   &-user {
@@ -28,11 +27,12 @@
     margin-right: calc(.5rem - 36px);
     font-size: 36px;
     &-hidden {
-      // display: none;
-      color: transparent;
+      display: none;
+      // color: transparent;
     }
   }
   &-title {
     font-size: 36px;
+    margin-left: calc(50% - 144px)
   }
 }

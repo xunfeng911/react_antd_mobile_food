@@ -62,7 +62,7 @@ class Login extends Component {
         Toast.fail('请完善登录信息！', 1);
       }
     } else {
-      Toast.fail('验证码错误！', 1000);
+      Toast.fail('验证码错误！', 1);
     }
   }
   _logined = () => {

@@ -23,22 +23,22 @@ class UsrInfo extends Component{
         <div className="index-cont">
           <div className="info">
             <div className="info-li">
-              <Icon type="user" />
+              <Icon type={require('../../public/img/usr.svg')} size="x" />
               <span>{this.state.usrName}</span>
               <Link to="/setname"><Icon type="right" /></Link>
             </div>
             <div className="info-li">
-              <Icon type="lock" />
+              <Icon type={require('../../public/img/password.svg')} size="x" />
               <span>修改登录密码</span>
               <Link to="/newpass"><Icon type="right" /></Link>
             </div>
             <div className="info-li">
-              <Icon type="phone" />
+              <Icon type={require('../../public/img/phone.svg')} size="x" />
               <span>已绑定的手机号</span>
               <span>{this.state.usrTel}</span>
             </div>
             <div className="info-li">
-              <i className="pcicon pcicon-QQ"></i>
+              <Icon type={require('../../public/img/qq.svg')} size="x" />
               <span>已绑定的企鹅号</span>
               <span>{this.state.usrQQ}</span>
               <Link to="/setqq"><Icon type="right" /></Link>

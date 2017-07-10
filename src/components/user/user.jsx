@@ -49,13 +49,13 @@ class User extends Component {
               <img src="http://xuncs.cn:828/yyxy.jpg" alt="" className="usr-info-img"/>
               <div className="usr-info-name">
                 <span>{this.state.usrName}</span>
-                <Link to="/usrInfo"><Icon type="right-circle" /></Link>
+                <Link to="/usrInfo"><Icon type="right" size ="x"/></Link>
               </div>
             </div>
             <div className="usr-list">
               <div className="usr-list-li">
                 <div className="usr-list-li-icon">
-                  <Link to="/"><Icon type="home" /></Link>
+                  <Link to="/"><Icon type={require('../../public/img/home.svg')} /></Link>
                 </div>
                 <div className="usr-list-li-tit">
                   <Link to="/"><span>首页</span></Link>
@@ -63,7 +63,7 @@ class User extends Component {
               </div>
               <div className="usr-list-li">
                 <div className="usr-list-li-icon">
-                  <Link to="/mypro"><Icon type="car" /></Link>
+                  <Link to="/mypro"><Icon type={require('../../public/img/taxi.svg')} /></Link>
                 </div>
                 <div className="usr-list-li-tit">
                   <Link to="/mypro"><span>我的行程</span></Link>

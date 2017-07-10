@@ -4,7 +4,14 @@ import {
   USER_SET_INFO
 } from './action';
 
-export const getUserInfo = (state = { isLogin: false, token: null, usrName: 'yyxy', usrQQ: 0, usrTel: 0}, action={}) => {
+export const getUserInfo = (
+  state = {
+    isLogin: false,
+    token: null,
+    usrName: 'yyxy',
+    usrQQ: 1232412,
+    usrTel: 12324120
+  }, action = {}) => {
   switch (action.type){
     case USER_SET_LOGIN:
       let {
@@ -23,7 +30,12 @@ export const getUserInfo = (state = { isLogin: false, token: null, usrName: 'yyx
       return state;
   }
 }
-export const testGetTitle = (state = {back: true, title: 'yyxy', user: true}, action={}) => {
+export const testGetTitle = (
+  state = {
+    back: true,
+    title: 'yyxy',
+    user: true
+  }, action = {}) => {
   switch (action.type){
     case YYXY_SET_BACK:
       let {

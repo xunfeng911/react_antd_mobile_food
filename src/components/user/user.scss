@@ -17,12 +17,11 @@
       height: 96px;
       line-height: 96px;
       font-size: 32px;
-      // .anticon{
-      //   color: $btnColor;
-      //   float: right;
-      //   line-height: 96px;
-      //   font-size: 36px;
-      // }
+      .am-icon{
+        float: right;
+        margin-top: 24px;
+        font-size: 36px;
+      }
     }
   }
   &-list {
@@ -34,8 +33,9 @@
       width: 25%;
       height: 96px;
       text-align: center;
-      &-icon .anticon {
-        font-size: 64px;
+      &-icon .am-icon {
+        height: 64px;
+        width: 64px;
         color: $textColor;
       }
       &-tit span {
@@ -53,18 +53,20 @@
     height: 96px;
     line-height: 96px;
     background: $bgWhite;
+    >.am-icon {
+    float: left;
+    margin-top: 24px;
+    color: $textColor;
+  }
     span {
-      margin-left: 1.2rem;
+      margin-left: 32px;
     }
   }
-  // .anticon, .pcicon {
-  //   font-size: 1.2rem;
-  // }
-  // .anticon-right {
-  //   float: right;
-  //   line-height: 3rem;
-  //   color: $textColor;
-  // }
+  .am-icon-right {
+    float: right;
+    margin-top: 24px;
+    color: $textColor;
+  }
   &-btn {
     margin-left: 5%;
     margin-top: 48px;
